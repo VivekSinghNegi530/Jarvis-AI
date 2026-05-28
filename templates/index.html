@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarvis Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="jarvis-logo">
+                <i class="fas fa-robot"></i>
+                <h1>JARVIS</h1>
+            </div>
+            <div class="status">
+                <span id="statusIndicator" class="status-offline">Offline</span>
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="chat-container">
+            <div id="chatMessages" class="chat-messages">
+                <div class="welcome-message">
+                    <div class="message jarvis">
+                        <div class="avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="message-content">
+                            <p>Hello! I'm Jarvis, your personal assistant. Click the mic or type to start talking to me!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="input-container">
+            <div class="input-wrapper">
+                <input type="text" id="commandInput" placeholder="Type your command or use voice..." autocomplete="off">
+                <button id="sendBtn" class="send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            <button id="voiceBtn" class="voice-btn">
+                <i class="fas fa-microphone"></i>
+            </button>
+            <div class="voice-status" id="voiceStatus">
+                <span>Click mic to speak</span>
+            </div>
+        </div>
+
+        <!-- Continuous Listening Toggle -->
+        <div class="toggle-container">
+            <label class="toggle-switch">
+                <input type="checkbox" id="continuousListening">
+                <span class="toggle-slider"></span>
+                Continuous Listening
+            </label>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
